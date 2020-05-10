@@ -26,6 +26,12 @@ namespace DataAccess.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<string>("AdsDetail")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Age")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("City")
                         .HasColumnType("nvarchar(max)");
 
@@ -35,7 +41,28 @@ namespace DataAccess.Migrations
                     b.Property<DateTime>("Date")
                         .HasColumnType("datetime2");
 
+                    b.Property<string>("District")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Fax")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Gender")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Phone")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("RelatedPerson")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Sector")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Title")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("WorkingTime")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");

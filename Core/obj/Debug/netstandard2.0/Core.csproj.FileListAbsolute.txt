@@ -1,0 +1,8 @@
+D:\Applications\C#\My Applications\WebScraper\Core\bin\Debug\netstandard2.0\Core.deps.json
+D:\Applications\C#\My Applications\WebScraper\Core\bin\Debug\netstandard2.0\Core.dll
+D:\Applications\C#\My Applications\WebScraper\Core\obj\Debug\netstandard2.0\Core.AssemblyInfoInputs.cache
+D:\Applications\C#\My Applications\WebScraper\Core\obj\Debug\netstandard2.0\Core.AssemblyInfo.cs
+D:\Applications\C#\My Applications\WebScraper\Core\bin\Debug\netstandard2.0\Core.pdb
+D:\Applications\C#\My Applications\WebScraper\Core\obj\Debug\netstandard2.0\Core.dll
+D:\Applications\C#\My Applications\WebScraper\Core\obj\Debug\netstandard2.0\Core.pdb
+D:\Applications\C#\My Applications\WebScraper\Core\obj\Debug\netstandard2.0\Core.csprojAssemblyReference.cache

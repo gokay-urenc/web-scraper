@@ -19,7 +19,7 @@ namespace Business.Concrete
             _advertisementDal = advertisementDal;
         }
 
-        private Advertisement GetAdvertisementByInnterText(string innerText)
+        private Advertisement GetAdvertisementByInnerText(string innerText)
         {
             try
             {
@@ -44,7 +44,16 @@ namespace Business.Concrete
                     Title = adsSplitted[0],
                     City = adsSplitted[1],
                     Company = adsSplitted[2],
-                    Date = DateTime.Parse(adsSplitted[4])
+                    Sector = adsSplitted[3],
+                    Date = DateTime.Parse(adsSplitted[4]),
+                    Age = "",
+                    Gender = "",
+                    District = "",
+                    Fax = "",
+                    Phone = "",
+                    AdsDetail = "",
+                    RelatedPerson = "",
+                    WorkingTime = ""
                 };
             }
             catch (Exception)
@@ -56,17 +65,15 @@ namespace Business.Concrete
         public async Task GetData()
         {
             var httpClient = new HttpClient();
-
             var ads = new List<Advertisement>();
 
-            for (int i = 1; i < 55; i++)
+            for (int i = 1; i < 57; i++)
             {
                 var url = string.Format(Values.URL, i);
-
                 var html = await httpClient.GetStringAsync(url);
                 var htmlDocument = new HtmlDocument();
                 htmlDocument.LoadHtml(html);
-                var adsNodes = htmlDocument.DocumentNode.SelectSingleNode("/html/body/div[1]/div/div[1]/div/div[1]/div").ChildNodes[1].ChildNodes;
+                var adsNodes = htmlDocument.DocumentNode.SelectSingleNode(Values.XPATH_FOR_URL).ChildNodes[1].ChildNodes;
 
                 for (int k = 0; k < adsNodes.Count; k++)
                 {
@@ -74,7 +81,7 @@ namespace Business.Concrete
                         continue;
 
                     var mainNode = adsNodes[k];
-                    var adsBasicModel = GetAdvertisementByInnterText(mainNode.InnerText);
+                    var adsBasicModel = GetAdvertisementByInnerText(mainNode.InnerText);
 
                     if (adsBasicModel != null)
                         ads.Add(adsBasicModel);
